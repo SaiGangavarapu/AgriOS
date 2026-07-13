@@ -1,19 +1,22 @@
-# What Changed — Patch 007
+# What Changed — Patch 008
 
-Patch 007 adds BRD Part 5 covering:
+Patch 008 adds BRD Part 6 covering:
 
-1. Pest and disease knowledge governance
-2. Scouting, symptoms, severity, and field observations
-3. Image-based crop-health evidence and AI-assisted classification
-4. Diagnosis confidence, differential diagnosis, and expert escalation
-5. Biological, cultural, mechanical, and chemical treatment governance
-6. Harvest planning, maturity, execution, and loss recording
-7. Post-harvest handling, grading, drying, packing, and storage
-8. Market-price intelligence and buyer coordination
-9. Farm cost, revenue, margin, and scenario analysis
-10. Insurance enrolment and claim-support evidence
-11. Lending and consented farm-performance evidence
-12. Produce lot traceability from field to sale
-13. Validation, reporting, audit, and traceability requirements
+1. Multilingual, accessible, low-literacy, and mobile-first user experience
+2. Voice input, speech output, conversational support, and language confidence
+3. Offline data capture, synchronization, conflict handling, and data recovery
+4. Push, SMS, voice, in-app, and assisted notification workflows
+5. Identity, authentication, sessions, recovery, and account protection
+6. Authorization, delegated access, segregation of duties, and privileged actions
+7. Privacy, consent, retention, deletion, portability, and purpose limitation
+8. Security monitoring, incident response, fraud, abuse, and operational risk
+9. Regulatory, policy, and programme configuration
+10. Platform configuration, master data, geography, crop, and pilot administration
+11. Analytics, anonymization, research access, and data-quality governance
+12. Support, issue management, field operations, and service levels
+13. Availability, backup, continuity, and disaster recovery
+14. Performance, scalability, interoperability, import, and export
+15. BRD completion review and unresolved business decisions
+16. Requirements BR-263 through BR-340
 
 This patch contains documentation only.
