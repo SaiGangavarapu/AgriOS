@@ -1,18 +1,18 @@
-# What Changed — Patch 005
+# What Changed — Patch 006
 
-Patch 005 adds BRD Part 3 covering:
+Patch 006 adds BRD Part 4 covering:
 
-1. Soil-sample planning, collection, chain of custody, testing, and interpretation
-2. Water-sample and water-quality workflows
-3. Crop and variety knowledge governance
-4. Crop suitability, ranking, and scenario planning
-5. Crop-plan creation, comparison, approval, and revision
-6. Crop-cycle lifecycle and field allocation
-7. Growth-stage tracking
-8. Seed and planting-material traceability
-9. Farm-operation planning and execution
-10. Crop calendar, reminders, dependencies, and overdue handling
-11. Season closure, yield, cost, and lessons learned
-12. Reports, validations, audit, and traceability requirements
+1. Natural, organic, integrated, and conventional nutrient plans
+2. Fertilizer, manure, compost, biofertilizer, and micronutrient controls
+3. Irrigation demand, scheduling, execution, and water accounting
+4. Weather-source ingestion, normalization, confidence, and alerts
+5. Monsoon, delayed-onset, dry-spell, flood, heat, and harvest advisories
+6. IoT device registration, installation, ownership, assignment, and lifecycle
+7. Telemetry validation, synchronization, quality scoring, and retention
+8. Device alerts, maintenance, calibration, and health
+9. Pump, valve, and actuator control safeguards
+10. Advisory generation, evidence, confidence, acknowledgement, and expiry
+11. Expert review, consultation, escalation, and service levels
+12. Validation, reporting, audit, and traceability requirements
 
 This patch contains documentation only.
