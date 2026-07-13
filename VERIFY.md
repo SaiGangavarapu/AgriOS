@@ -1,34 +1,35 @@
-# Verification — Patch 006
+# Verification — Patch 007
 
 Run from the AgriOS repository root:
 
 ```powershell
 $requiredFiles = @(
-  "PATCH_006_README.md",
+  "PATCH_007_README.md",
   "WHAT_CHANGED.md",
   "VERIFY.md",
-  "docs/02-brd/BRD_34_NUTRIENT_MANAGEMENT_PLANNING_v0.1.md",
-  "docs/02-brd/BRD_35_INPUT_APPLICATION_AND_SAFETY_CONTROLS_v0.1.md",
-  "docs/02-brd/BRD_36_IRRIGATION_PLANNING_AND_SCHEDULING_v0.1.md",
-  "docs/02-brd/BRD_37_WEATHER_DATA_AND_FORECAST_MANAGEMENT_v0.1.md",
-  "docs/02-brd/BRD_38_MONSOON_AND_CLIMATE_RISK_ADVISORIES_v0.1.md",
-  "docs/02-brd/BRD_39_IOT_DEVICE_REGISTRY_AND_INSTALLATION_v0.1.md",
-  "docs/02-brd/BRD_40_TELEMETRY_AND_DATA_QUALITY_v0.1.md",
-  "docs/02-brd/BRD_41_DEVICE_ALERTS_MAINTENANCE_AND_CALIBRATION_v0.1.md",
-  "docs/02-brd/BRD_42_AUTOMATION_AND_ACTUATOR_SAFEGUARDS_v0.1.md",
-  "docs/02-brd/BRD_43_ADVISORY_GENERATION_AND_EXPLANATION_v0.1.md",
-  "docs/02-brd/BRD_44_EXPERT_REVIEW_AND_CONSULTATION_v0.1.md",
-  "docs/02-brd/BRD_45_VALIDATION_REPORTING_AND_AUDIT_v0.1.md",
-  "docs/02-brd/BRD_TRACEABILITY_REGISTER_PART_4_v0.1.md"
+  "docs/02-brd/BRD_46_PEST_AND_DISEASE_KNOWLEDGE_v0.1.md",
+  "docs/02-brd/BRD_47_FIELD_SCOUTING_AND_OBSERVATIONS_v0.1.md",
+  "docs/02-brd/BRD_48_IMAGE_BASED_CROP_HEALTH_OBSERVATIONS_v0.1.md",
+  "docs/02-brd/BRD_49_DIAGNOSIS_CONFIDENCE_AND_ESCALATION_v0.1.md",
+  "docs/02-brd/BRD_50_TREATMENT_PLANNING_AND_SAFETY_v0.1.md",
+  "docs/02-brd/BRD_51_HARVEST_PLANNING_AND_EXECUTION_v0.1.md",
+  "docs/02-brd/BRD_52_POST_HARVEST_GRADING_AND_STORAGE_v0.1.md",
+  "docs/02-brd/BRD_53_MARKET_INTELLIGENCE_AND_BUYER_WORKFLOWS_v0.1.md",
+  "docs/02-brd/BRD_54_FARM_ECONOMICS_AND_PROFITABILITY_v0.1.md",
+  "docs/02-brd/BRD_55_INSURANCE_AND_CLAIM_SUPPORT_v0.1.md",
+  "docs/02-brd/BRD_56_LENDING_AND_FINANCIAL_EVIDENCE_v0.1.md",
+  "docs/02-brd/BRD_57_PRODUCE_LOT_TRACEABILITY_v0.1.md",
+  "docs/02-brd/BRD_58_VALIDATION_REPORTING_AND_AUDIT_v0.1.md",
+  "docs/02-brd/BRD_TRACEABILITY_REGISTER_PART_5_v0.1.md"
 )
 
 $missing = $requiredFiles | Where-Object { -not (Test-Path $_) }
 
 if ($missing.Count -gt 0) {
-  Write-Host "Patch 006 verification failed. Missing files:" -ForegroundColor Red
+  Write-Host "Patch 007 verification failed. Missing files:" -ForegroundColor Red
   $missing | ForEach-Object { Write-Host " - $_" -ForegroundColor Red }
   exit 1
 }
 
-Write-Host "Patch 006 verification passed." -ForegroundColor Green
+Write-Host "Patch 007 verification passed." -ForegroundColor Green
 ```
