@@ -1,0 +1,30 @@
+# AgriOS Glossary
+
+- **Advisory:** Context-specific action guidance generated from evidence, rules, observations, and forecasts.
+- **Agro-climatic zone:** Region grouped by climate and agricultural characteristics.
+- **Agro-ecological zone:** Region grouped by climate, soil, terrain, and growing conditions.
+- **Available water:** Soil water held between field capacity and permanent wilting point.
+- **Biofertilizer:** Product containing beneficial microorganisms intended to improve nutrient availability.
+- **Certified seed:** Seed produced and verified under an applicable certification system.
+- **Crop cycle:** Complete lifecycle of a crop in a field from planning to closure.
+- **Crop rotation:** Planned sequence of crops over seasons.
+- **Digital twin:** Continuously maintained digital representation of a field, crop cycle, device, or farm.
+- **EC:** Electrical conductivity, commonly used as an indicator of salinity.
+- **Evapotranspiration:** Combined water loss from evaporation and plant transpiration.
+- **Expert review required:** Recommendation state indicating that automated publication is not permitted.
+- **Farm operation:** Recorded activity such as sowing, irrigation, weeding, or nutrient application.
+- **Field capacity:** Soil-water content after excess gravitational water has drained.
+- **Growing-degree days:** Accumulated heat units used to estimate crop development.
+- **Integrated nutrient management:** Coordinated use of mineral, organic, biological, and recycled nutrient sources.
+- **Integrated pest management:** Prevention and control approach combining cultural, biological, mechanical, and chemical measures.
+- **Leaf wetness:** Presence or duration of moisture on leaf surfaces.
+- **LoRaWAN:** Low-power wide-area network protocol suitable for dispersed field sensors.
+- **Organic farming:** Farming under defined organic production and certification standards.
+- **Permanent wilting point:** Soil-water level below which plants cannot recover normal turgidity.
+- **Precision agriculture:** Site-specific management using measurements, geospatial data, and decision systems.
+- **Recommendation confidence:** Assessed reliability of a recommendation given evidence and input quality.
+- **Soil organic carbon:** Carbon component of soil organic matter and an important soil-health indicator.
+- **Soil test:** Laboratory or validated field analysis of soil properties.
+- **Telemetry:** Time-stamped observations sent by a device.
+- **Variety:** Genetically defined type within a crop species.
+- **Water balance:** Accounting of rainfall, irrigation, runoff, drainage, evaporation, and crop water use.
