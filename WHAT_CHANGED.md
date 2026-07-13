@@ -1,24 +1,15 @@
-# What Changed — Patch 012
+# What Changed — Complete SRS v1.0
 
-Patch 012 starts the AgriOS SRS.
+This release adds or refreshes the complete AgriOS SRS baseline.
 
-It adds:
+It covers:
 
-1. SRS governance and document-control rules
-2. Actor catalogue
-3. Use-case catalogue
-4. Functional and non-functional requirement conventions
-5. Acceptance-criteria conventions
-6. Farmer onboarding requirements
-7. Farmer profile and verification requirements
-8. Household and organization requirements
-9. Farm registration requirements
-10. Field and geospatial-boundary requirements
-11. Tenure and cultivation-right requirements
-12. Role and delegated-access requirements
-13. Consent and data-sharing requirements
-14. Validation and error catalogue
-15. Acceptance criteria
-16. BRD-to-SRS traceability matrix
+- governance, actors, use cases, and conventions
+- farmer, farm, field, tenure, roles, and consent
+- soil, water, crop, seed, planning, and crop cycles
+- nutrient, fertilizer-free, fertilizer-based, irrigation, weather, and monsoon
+- IoT, telemetry, AI advisory, pest, disease, harvest, and storage
+- market, traceability, economics, insurance, and lending
+- reporting, security, privacy, offline operation, APIs, validation, errors, acceptance criteria, and traceability
 
-This patch contains specification documentation only.
+No implementation code is included.
