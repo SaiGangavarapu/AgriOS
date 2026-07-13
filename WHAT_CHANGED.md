@@ -1,18 +1,20 @@
-# What Changed — Patch 002
+# What Changed — Patch 003
 
-Patch 002 adds the following documentation:
+Patch 003 introduces the first formal Business Requirements Document content for AgriOS.
 
-1. Farming lifecycle and operating model
-2. Farming-system comparison
-3. Soil science and soil-test interpretation
-4. Seed classes and variety selection
-5. Crop suitability and crop-planning factors
-6. Natural, organic, integrated, and conventional nutrient management
-7. Irrigation and water-management foundation
-8. Weather and monsoon intelligence
-9. IoT devices, connectivity, calibration, and edge architecture
-10. Agronomy evidence and source-governance rules
-11. AgriOS domain glossary
-12. Research-validation backlog for expert review
+It adds:
 
-No backend, frontend, database, or infrastructure code is added in this patch.
+1. BRD structure and document governance
+2. Executive business summary
+3. Business context and problem statement
+4. Product vision and strategic goals
+5. Stakeholder analysis
+6. Farmer and institutional personas
+7. Initial in-scope and out-of-scope boundaries
+8. Business capability map
+9. Business outcomes and KPIs
+10. Assumptions, constraints, and external dependencies
+11. Business-risk register
+12. Initial requirements traceability register
+
+This patch adds documentation only. It does not add implementation code.
