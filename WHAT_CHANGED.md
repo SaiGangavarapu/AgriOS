@@ -1,17 +1,24 @@
-# What Changed — Patch 011
+# What Changed — Patch 012
 
-Patch 011 adds Domain Architecture Part 3.
+Patch 012 starts the AgriOS SRS.
 
-It introduces:
+It adds:
 
-1. Ubiquitous language for core bounded contexts
-2. Aggregate lifecycle and state-transition models
-3. Command acceptance and rejection criteria
-4. Event envelope and payload compatibility rules
-5. Module dependency rules
-6. Spring Modulith architecture-test strategy
-7. Priority architecture decisions for identity, tenancy, task ownership, advisory boundaries, telemetry, and existing-product integration
-8. Domain architecture completion review
-9. Updated BRD-to-domain traceability
+1. SRS governance and document-control rules
+2. Actor catalogue
+3. Use-case catalogue
+4. Functional and non-functional requirement conventions
+5. Acceptance-criteria conventions
+6. Farmer onboarding requirements
+7. Farmer profile and verification requirements
+8. Household and organization requirements
+9. Farm registration requirements
+10. Field and geospatial-boundary requirements
+11. Tenure and cultivation-right requirements
+12. Role and delegated-access requirements
+13. Consent and data-sharing requirements
+14. Validation and error catalogue
+15. Acceptance criteria
+16. BRD-to-SRS traceability matrix
 
-This patch contains architecture documentation only.
+This patch contains specification documentation only.
