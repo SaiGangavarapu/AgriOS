@@ -1,20 +1,18 @@
-# What Changed — Patch 003
+# What Changed — Patch 004
 
-Patch 003 introduces the first formal Business Requirements Document content for AgriOS.
+Patch 004 adds BRD Part 2 covering:
 
-It adds:
+1. Farmer onboarding and identity
+2. Household and organization relationships
+3. Farm registration
+4. Field registration and geospatial boundaries
+5. Land ownership, lease, and cultivation rights
+6. Water-source registration
+7. User roles and delegated access
+8. Consent and data sharing
+9. Field-officer assisted onboarding and visits
+10. Business rules, validations, exceptions, and lifecycle states
+11. Reports, dashboards, and audit expectations
+12. Expanded requirements traceability
 
-1. BRD structure and document governance
-2. Executive business summary
-3. Business context and problem statement
-4. Product vision and strategic goals
-5. Stakeholder analysis
-6. Farmer and institutional personas
-7. Initial in-scope and out-of-scope boundaries
-8. Business capability map
-9. Business outcomes and KPIs
-10. Assumptions, constraints, and external dependencies
-11. Business-risk register
-12. Initial requirements traceability register
-
-This patch adds documentation only. It does not add implementation code.
+This patch contains documentation only.
