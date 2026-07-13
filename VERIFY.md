@@ -1,48 +1,48 @@
-# Verification — Complete Solution Architecture v1.0
+# Verification — Complete Database Design v1.0
 
 Run from the AgriOS repository root:
 
 ```powershell
 $requiredFiles = @(
-  "RELEASE_SOLUTION_ARCHITECTURE_V1_README.md",
+  "RELEASE_DATABASE_DESIGN_V1_README.md",
   "WHAT_CHANGED.md",
   "VERIFY.md",
-  "docs/05-solution-architecture/SA_INDEX_v1.0.md",
-  "docs/05-solution-architecture/SA_01_ARCHITECTURE_PRINCIPLES_v1.0.md",
-  "docs/05-solution-architecture/SA_02_SYSTEM_CONTEXT_v1.0.md",
-  "docs/05-solution-architecture/SA_03_LOGICAL_ARCHITECTURE_v1.0.md",
-  "docs/05-solution-architecture/SA_04_MODULAR_MONOLITH_ARCHITECTURE_v1.0.md",
-  "docs/05-solution-architecture/SA_05_DATA_ARCHITECTURE_v1.0.md",
-  "docs/05-solution-architecture/SA_06_DATABASE_AND_SCHEMA_STRATEGY_v1.0.md",
-  "docs/05-solution-architecture/SA_07_API_ARCHITECTURE_v1.0.md",
-  "docs/05-solution-architecture/SA_08_EVENT_ARCHITECTURE_v1.0.md",
-  "docs/05-solution-architecture/SA_09_INTEGRATION_ARCHITECTURE_v1.0.md",
-  "docs/05-solution-architecture/SA_10_SECURITY_ARCHITECTURE_v1.0.md",
-  "docs/05-solution-architecture/SA_11_PRIVACY_CONSENT_AND_AUDIT_ARCHITECTURE_v1.0.md",
-  "docs/05-solution-architecture/SA_12_IOT_AND_EDGE_ARCHITECTURE_v1.0.md",
-  "docs/05-solution-architecture/SA_13_WEATHER_INTELLIGENCE_ARCHITECTURE_v1.0.md",
-  "docs/05-solution-architecture/SA_14_AI_RAG_AND_MODEL_ARCHITECTURE_v1.0.md",
-  "docs/05-solution-architecture/SA_15_OFFLINE_FIRST_ARCHITECTURE_v1.0.md",
-  "docs/05-solution-architecture/SA_16_NOTIFICATION_ARCHITECTURE_v1.0.md",
-  "docs/05-solution-architecture/SA_17_REPORTING_AND_ANALYTICS_ARCHITECTURE_v1.0.md",
-  "docs/05-solution-architecture/SA_18_DEPLOYMENT_TOPOLOGY_v1.0.md",
-  "docs/05-solution-architecture/SA_19_ENVIRONMENT_AND_CLOUD_STRATEGY_v1.0.md",
-  "docs/05-solution-architecture/SA_20_OBSERVABILITY_ARCHITECTURE_v1.0.md",
-  "docs/05-solution-architecture/SA_21_RELIABILITY_BACKUP_AND_RECOVERY_v1.0.md",
-  "docs/05-solution-architecture/SA_22_PERFORMANCE_AND_SCALABILITY_v1.0.md",
-  "docs/05-solution-architecture/SA_23_DEVSECOPS_AND_CICD_v1.0.md",
-  "docs/05-solution-architecture/SA_24_TESTING_ARCHITECTURE_v1.0.md",
-  "docs/05-solution-architecture/SA_25_IMPLEMENTATION_ROADMAP_v1.0.md",
-  "docs/05-solution-architecture/SA_26_ARCHITECTURE_TRACEABILITY_v1.0.md"
+  "docs/06-data-design/DB_INDEX_v1.0.md",
+  "docs/06-data-design/DB_01_PRINCIPLES_AND_CONVENTIONS_v1.0.md",
+  "docs/06-data-design/DB_02_SCHEMA_OWNERSHIP_v1.0.md",
+  "docs/06-data-design/DB_03_GLOBAL_IDENTIFIERS_AND_AUDIT_COLUMNS_v1.0.md",
+  "docs/06-data-design/DB_04_TENANT_AND_PROGRAMME_MODEL_v1.0.md",
+  "docs/06-data-design/DB_05_IDENTITY_FARMER_HOUSEHOLD_ORGANIZATION_v1.0.md",
+  "docs/06-data-design/DB_06_FARM_FIELD_TENURE_AND_WATER_SOURCE_v1.0.md",
+  "docs/06-data-design/DB_07_SOIL_AND_WATER_LABORATORY_v1.0.md",
+  "docs/06-data-design/DB_08_AGRONOMY_KNOWLEDGE_v1.0.md",
+  "docs/06-data-design/DB_09_CROP_PLANNING_CYCLE_SEED_OPERATIONS_TASKS_v1.0.md",
+  "docs/06-data-design/DB_10_NUTRIENT_AND_IRRIGATION_v1.0.md",
+  "docs/06-data-design/DB_11_WEATHER_IOT_AND_TELEMETRY_v1.0.md",
+  "docs/06-data-design/DB_12_ADVISORY_EXPERT_AND_CROP_HEALTH_v1.0.md",
+  "docs/06-data-design/DB_13_HARVEST_STORAGE_AND_TRACEABILITY_v1.0.md",
+  "docs/06-data-design/DB_14_MARKET_ECONOMICS_INSURANCE_AND_LENDING_v1.0.md",
+  "docs/06-data-design/DB_15_CONSENT_AUDIT_LOCALIZATION_NOTIFICATION_SUPPORT_v1.0.md",
+  "docs/06-data-design/DB_16_GEOSPATIAL_DESIGN_v1.0.md",
+  "docs/06-data-design/DB_17_TIME_SERIES_DESIGN_v1.0.md",
+  "docs/06-data-design/DB_18_OBJECT_STORAGE_METADATA_v1.0.md",
+  "docs/06-data-design/DB_19_SEARCH_AND_REPORTING_PROJECTIONS_v1.0.md",
+  "docs/06-data-design/DB_20_INDEXING_AND_PERFORMANCE_v1.0.md",
+  "docs/06-data-design/DB_21_PARTITIONING_RETENTION_AND_ARCHIVAL_v1.0.md",
+  "docs/06-data-design/DB_22_MIGRATION_AND_SEED_DATA_GOVERNANCE_v1.0.md",
+  "docs/06-data-design/DB_23_DATA_SECURITY_PRIVACY_AND_MASKING_v1.0.md",
+  "docs/06-data-design/DB_24_BACKUP_RESTORE_AND_RECONCILIATION_v1.0.md",
+  "docs/06-data-design/DB_25_LOGICAL_RELATIONSHIP_MAP_v1.0.md",
+  "docs/06-data-design/DB_26_DATABASE_TRACEABILITY_v1.0.md"
 )
 
 $missing = $requiredFiles | Where-Object { -not (Test-Path $_) }
 
 if ($missing.Count -gt 0) {
-  Write-Host "Solution Architecture verification failed. Missing files:" -ForegroundColor Red
+  Write-Host "Database Design verification failed. Missing files:" -ForegroundColor Red
   $missing | ForEach-Object { Write-Host " - $_" -ForegroundColor Red }
   exit 1
 }
 
-Write-Host "AgriOS Complete Solution Architecture v1.0 verification passed." -ForegroundColor Green
+Write-Host "AgriOS Complete Database Design v1.0 verification passed." -ForegroundColor Green
 ```
