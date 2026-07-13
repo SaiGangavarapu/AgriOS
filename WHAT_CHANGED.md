@@ -1,18 +1,17 @@
-# What Changed — Patch 010
+# What Changed — Patch 011
 
-Patch 010 adds detailed domain architecture specifications.
+Patch 011 adds Domain Architecture Part 3.
 
 It introduces:
 
-1. A standard bounded-context specification format
-2. Detailed context contracts for all major AgriOS domains
-3. Command and query catalogues
-4. Repository, port, and adapter responsibilities
-5. Process managers and saga definitions
-6. Context-specific invariants
-7. Transaction and consistency boundaries
-8. Idempotency, retry, replay, and reconciliation rules
-9. Failure classification and recovery patterns
-10. Updated BRD and context traceability
+1. Ubiquitous language for core bounded contexts
+2. Aggregate lifecycle and state-transition models
+3. Command acceptance and rejection criteria
+4. Event envelope and payload compatibility rules
+5. Module dependency rules
+6. Spring Modulith architecture-test strategy
+7. Priority architecture decisions for identity, tenancy, task ownership, advisory boundaries, telemetry, and existing-product integration
+8. Domain architecture completion review
+9. Updated BRD-to-domain traceability
 
 This patch contains architecture documentation only.
