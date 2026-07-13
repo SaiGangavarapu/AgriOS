@@ -1,18 +1,18 @@
-# What Changed — Patch 004
+# What Changed — Patch 005
 
-Patch 004 adds BRD Part 2 covering:
+Patch 005 adds BRD Part 3 covering:
 
-1. Farmer onboarding and identity
-2. Household and organization relationships
-3. Farm registration
-4. Field registration and geospatial boundaries
-5. Land ownership, lease, and cultivation rights
-6. Water-source registration
-7. User roles and delegated access
-8. Consent and data sharing
-9. Field-officer assisted onboarding and visits
-10. Business rules, validations, exceptions, and lifecycle states
-11. Reports, dashboards, and audit expectations
-12. Expanded requirements traceability
+1. Soil-sample planning, collection, chain of custody, testing, and interpretation
+2. Water-sample and water-quality workflows
+3. Crop and variety knowledge governance
+4. Crop suitability, ranking, and scenario planning
+5. Crop-plan creation, comparison, approval, and revision
+6. Crop-cycle lifecycle and field allocation
+7. Growth-stage tracking
+8. Seed and planting-material traceability
+9. Farm-operation planning and execution
+10. Crop calendar, reminders, dependencies, and overdue handling
+11. Season closure, yield, cost, and lessons learned
+12. Reports, validations, audit, and traceability requirements
 
 This patch contains documentation only.
