@@ -1,0 +1,13 @@
+This cumulative milestone was generated from the Weather, Monsoon, and Climate
+Risk baseline.
+
+The user is testing the previous milestone in parallel. This ZIP must not be
+treated as applied until local build, migration, and functional verification
+are completed.
+
+Required acceptance gate:
+
+1. mvn clean verify
+2. Flyway V001-V021
+3. Docker/PostGIS startup
+4. device, telemetry, and automation API smoke tests

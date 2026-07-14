@@ -1,5 +1,9 @@
 @org.springframework.modulith.ApplicationModule(
     displayName = "Telemetry",
-    allowedDependencies = {"shared", "common"}
+    allowedDependencies = {
+        "common::web",
+        "common::exception",
+        "iotdevice::domain"
+    }
 )
 package com.agrios.platform.telemetry;

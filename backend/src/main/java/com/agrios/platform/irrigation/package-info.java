@@ -5,7 +5,9 @@
         "common::exception",
         "cropcycle::domain",
         "farm::domain",
-        "soilwater::domain"
+        "soilwater::domain",
+        "iotdevice::domain",
+        "telemetry::domain"
     }
 )
 package com.agrios.platform.irrigation;
