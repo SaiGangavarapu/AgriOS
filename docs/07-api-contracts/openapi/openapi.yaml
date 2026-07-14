@@ -1,0 +1,287 @@
+openapi: 3.1.0
+info:
+  title: AgriOS API
+  version: 1.0.0
+  description: |
+    Consolidated implementation baseline for AgriOS. Domain modules extend this
+    root contract through validated path and schema fragments.
+servers:
+  - url: /api/v1
+security:
+  - bearerAuth: []
+tags:
+  - name: Farmers
+  - name: Farms
+  - name: Fields
+  - name: CropPlans
+  - name: Advisories
+  - name: Devices
+paths:
+  /farmers:
+    get:
+      tags: [Farmers]
+      operationId: searchFarmers
+      parameters:
+        - $ref: '#/components/parameters/Page'
+        - $ref: '#/components/parameters/Size'
+      responses:
+        '200':
+          description: Farmer page
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FarmerPage'
+        default:
+          $ref: '#/components/responses/Error'
+    post:
+      tags: [Farmers]
+      operationId: registerFarmer
+      parameters:
+        - $ref: '#/components/parameters/IdempotencyKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RegisterFarmerRequest'
+      responses:
+        '201':
+          description: Farmer registered
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Farmer'
+        default:
+          $ref: '#/components/responses/Error'
+  /farmers/{farmerId}:
+    get:
+      tags: [Farmers]
+      operationId: getFarmer
+      parameters:
+        - $ref: '#/components/parameters/FarmerId'
+      responses:
+        '200':
+          description: Farmer
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Farmer'
+        default:
+          $ref: '#/components/responses/Error'
+  /farms:
+    post:
+      tags: [Farms]
+      operationId: registerFarm
+      parameters:
+        - $ref: '#/components/parameters/IdempotencyKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RegisterFarmRequest'
+      responses:
+        '201':
+          description: Farm registered
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Farm'
+        default:
+          $ref: '#/components/responses/Error'
+  /fields/{fieldId}:
+    get:
+      tags: [Fields]
+      operationId: getField
+      parameters:
+        - $ref: '#/components/parameters/FieldId'
+      responses:
+        '200':
+          description: Field
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Field'
+        default:
+          $ref: '#/components/responses/Error'
+  /crop-plans:
+    post:
+      tags: [CropPlans]
+      operationId: createCropPlan
+      parameters:
+        - $ref: '#/components/parameters/IdempotencyKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [fieldId, season]
+              properties:
+                fieldId: {$ref: '#/components/schemas/Uuid'}
+                season: {type: string}
+      responses:
+        '201':
+          description: Crop plan created
+        default:
+          $ref: '#/components/responses/Error'
+  /fields/{fieldId}/advisories:
+    get:
+      tags: [Advisories]
+      operationId: listFieldAdvisories
+      parameters:
+        - $ref: '#/components/parameters/FieldId'
+      responses:
+        '200':
+          description: Active advisories
+        default:
+          $ref: '#/components/responses/Error'
+  /devices/{deviceId}/health:
+    get:
+      tags: [Devices]
+      operationId: getDeviceHealth
+      parameters:
+        - name: deviceId
+          in: path
+          required: true
+          schema: {$ref: '#/components/schemas/Uuid'}
+      responses:
+        '200':
+          description: Device health
+        default:
+          $ref: '#/components/responses/Error'
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  parameters:
+    Page:
+      name: page
+      in: query
+      schema: {type: integer, minimum: 0, default: 0}
+    Size:
+      name: size
+      in: query
+      schema: {type: integer, minimum: 1, maximum: 200, default: 20}
+    IdempotencyKey:
+      name: Idempotency-Key
+      in: header
+      required: true
+      schema: {type: string, minLength: 8, maxLength: 128}
+    FarmerId:
+      name: farmerId
+      in: path
+      required: true
+      schema: {$ref: '#/components/schemas/Uuid'}
+    FieldId:
+      name: fieldId
+      in: path
+      required: true
+      schema: {$ref: '#/components/schemas/Uuid'}
+  responses:
+    Error:
+      description: Error response
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ApiError'
+  schemas:
+    Uuid:
+      type: string
+      format: uuid
+    ResourceMetadata:
+      type: object
+      required: [id, version, status, createdAt, updatedAt]
+      properties:
+        id: {$ref: '#/components/schemas/Uuid'}
+        version: {type: integer, format: int64}
+        status: {type: string}
+        createdAt: {type: string, format: date-time}
+        updatedAt: {type: string, format: date-time}
+    RegisterFarmerRequest:
+      type: object
+      required: [fullName, preferredLanguage, location]
+      properties:
+        fullName: {type: string, minLength: 1, maxLength: 200}
+        preferredLanguage: {type: string, minLength: 2, maxLength: 10}
+        mobile: {type: string}
+        location:
+          type: object
+          required: [villageId]
+          properties:
+            villageId: {$ref: '#/components/schemas/Uuid'}
+        sourceChannel:
+          type: string
+          enum: [SELF, FIELD_OFFICER, ORGANIZATION, IMPORT]
+    Farmer:
+      allOf:
+        - $ref: '#/components/schemas/ResourceMetadata'
+        - type: object
+          required: [fullName, preferredLanguage, verificationLevel]
+          properties:
+            fullName: {type: string}
+            preferredLanguage: {type: string}
+            verificationLevel:
+              type: string
+              enum: [UNVERIFIED, CONTACT_VERIFIED, INSTITUTION_VERIFIED, DOCUMENT_VERIFIED]
+    FarmerPage:
+      type: object
+      required: [content, page]
+      properties:
+        content:
+          type: array
+          items: {$ref: '#/components/schemas/Farmer'}
+        page:
+          type: object
+          properties:
+            number: {type: integer}
+            size: {type: integer}
+            totalElements: {type: integer, format: int64}
+            totalPages: {type: integer}
+    RegisterFarmRequest:
+      type: object
+      required: [name, primaryOperatorFarmerId, location]
+      properties:
+        name: {type: string, maxLength: 200}
+        primaryOperatorFarmerId: {$ref: '#/components/schemas/Uuid'}
+        location:
+          type: object
+          required: [villageId]
+          properties:
+            villageId: {$ref: '#/components/schemas/Uuid'}
+    Farm:
+      allOf:
+        - $ref: '#/components/schemas/ResourceMetadata'
+        - type: object
+          properties:
+            name: {type: string}
+            primaryOperatorFarmerId: {$ref: '#/components/schemas/Uuid'}
+    Field:
+      allOf:
+        - $ref: '#/components/schemas/ResourceMetadata'
+        - type: object
+          properties:
+            farmId: {$ref: '#/components/schemas/Uuid'}
+            name: {type: string}
+            areaHectares: {type: number}
+    ApiError:
+      type: object
+      required: [timestamp, status, code, message, correlationId, retryable]
+      properties:
+        timestamp: {type: string, format: date-time}
+        status: {type: integer}
+        code: {type: string}
+        message: {type: string}
+        messageKey: {type: string}
+        correlationId: {$ref: '#/components/schemas/Uuid'}
+        retryable: {type: boolean}
+        fieldErrors:
+          type: array
+          items:
+            type: object
+            properties:
+              field: {type: string}
+              code: {type: string}
+              message: {type: string}
