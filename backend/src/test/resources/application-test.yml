@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:agrios_test;MODE=PostgreSQL;DB_CLOSE_DELAY=-1
+    username: sa
+    password:
+  flyway:
+    enabled: false
+  jpa:
+    hibernate:
+      ddl-auto: none
+  autoconfigure:
+    exclude:
+      - org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration
+      - org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration
+      - org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration
+
+agrios:
+  security:
+    enabled: false
+    jwt-secret: test-secret-test-secret-test-secret
+    issuer: agrios-test

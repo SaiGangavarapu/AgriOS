@@ -30,3 +30,8 @@ Thumbs.db
 # Local tools
 .tmp/
 .local/
+backend/target/
+backend/.idea/
+backend/*.iml
+backend/.env
+database/.env

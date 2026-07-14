@@ -1,0 +1,9 @@
+spring:
+  config:
+    activate:
+      on-profile: local
+
+logging:
+  level:
+    com.agrios.platform: DEBUG
+    org.springframework.modulith: INFO

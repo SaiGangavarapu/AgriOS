@@ -1,0 +1,8 @@
+Build verification was not executed in the generation environment because the Maven executable was not runnable there.
+
+Run locally:
+
+cd backend
+mvn clean verify
+
+The ZIP contains source, tests, Docker configuration, and CI configuration, but local verification is required before treating the milestone as applied.
