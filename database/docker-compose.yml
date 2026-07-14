@@ -1,0 +1,22 @@
+services:
+  postgres:
+    image: postgis/postgis:16-3.4
+    container_name: agrios-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-agrios}
+      POSTGRES_USER: ${POSTGRES_USER:-agrios}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-agrios_dev_password}
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - agrios_pg_data:/var/lib/postgresql/data
+      - ./migration:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-agrios} -d ${POSTGRES_DB:-agrios}"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  agrios_pg_data:
