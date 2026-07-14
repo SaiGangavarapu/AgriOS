@@ -60,6 +60,24 @@ CREATE TABLE integration.outbox_event (
   created_at timestamptz NOT NULL DEFAULT now()
 );
 
+CREATE TABLE event_publication (
+  id uuid PRIMARY KEY,
+  publication_date timestamptz NOT NULL,
+  listener_id varchar(255) NOT NULL,
+  serialized_event varchar(255) NOT NULL,
+  event_type varchar(255) NOT NULL,
+  completion_date timestamptz NULL
+);
+
+CREATE TABLE event_publication_archive (
+  id uuid PRIMARY KEY,
+  publication_date timestamptz NOT NULL,
+  listener_id varchar(255) NOT NULL,
+  serialized_event varchar(255) NOT NULL,
+  event_type varchar(255) NOT NULL,
+  completion_date timestamptz NULL
+);
+
 CREATE TABLE integration.idempotency_record (
   id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
   tenant_id uuid NOT NULL,

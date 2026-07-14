@@ -25,7 +25,7 @@ public class FarmerEntity {
     @Column(nullable = false, length = 10)
     private String preferredLanguage;
 
-    @Column(length = 20)
+    @Column(name = "mobile_e164", length = 20)
     private String mobileE164;
 
     @Column(nullable = false, length = 160)

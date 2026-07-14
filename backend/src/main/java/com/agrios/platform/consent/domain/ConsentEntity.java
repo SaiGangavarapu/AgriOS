@@ -3,6 +3,8 @@ package com.agrios.platform.consent.domain;
 import jakarta.persistence.*;
 import java.time.Instant;
 import java.util.UUID;
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.SqlTypes;
 
 @Entity
 @Table(name = "consent_grant", schema = "consent")
@@ -13,7 +15,9 @@ public class ConsentEntity {
     @Column(nullable = false) private String purposeCode;
     @Column(nullable = false) private String recipientType;
     @Column(nullable = false) private String recipientId;
+    @JdbcTypeCode(SqlTypes.JSON)
     @Column(nullable = false, columnDefinition = "jsonb") private String dataCategories;
+    @JdbcTypeCode(SqlTypes.JSON)
     @Column(nullable = false, columnDefinition = "jsonb") private String scopeJson;
     @Column(nullable = false) private String policyVersion;
     @Column(nullable = false) private String language;

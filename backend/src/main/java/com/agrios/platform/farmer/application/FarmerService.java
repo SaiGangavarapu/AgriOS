@@ -43,7 +43,7 @@ public class FarmerService {
                 request.sourceChannel(), actorId);
         farmers.save(farmer);
         outbox.append(tenantId, "Farmer", farmer.id(), farmer.version(),
-                "FarmerRegistered", "{"farmerId":"" + farmer.id() + ""}",
+                "FarmerRegistered", "{\"farmerId\":\"" + farmer.id() + "\"}",
                 correlationId, null, Instant.now());
         return FarmerDtos.Response.from(farmer);
     }

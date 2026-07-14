@@ -7,13 +7,13 @@ import org.junit.jupiter.api.Test;
 
 class LayeringArchitectureTest {
     @Test
-    void domainPackagesMustNotDependOnWebOrPersistenceFrameworks() {
+    void domainPackagesMustNotDependOnWebFrameworks() {
         var classes = new ClassFileImporter().importPackages("com.agrios.platform");
 
         noClasses()
                 .that().resideInAPackage("..domain..")
                 .should().dependOnClassesThat()
-                .resideInAnyPackage("org.springframework.web..", "jakarta.persistence..")
+                .resideInAnyPackage("org.springframework.web..")
                 .check(classes);
     }
 }

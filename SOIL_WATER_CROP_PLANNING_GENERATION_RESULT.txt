@@ -1,0 +1,10 @@
+The uploaded repository and its uncommitted user fixes were used as the source
+of truth. The new code was statically reviewed during generation.
+
+The generation environment does not provide Maven or Docker, so the required
+local acceptance gate is:
+
+1. mvn clean verify
+2. Flyway V001-V010 validation against PostGIS PostgreSQL
+3. Docker Compose startup
+4. API smoke test

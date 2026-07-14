@@ -40,6 +40,7 @@ public class WaterSourceEntity {
     }
 
     public UUID id() { return id; }
+    public UUID tenantId() { return tenantId; }
     public UUID farmId() { return farmId; }
     public String sourceType() { return sourceType; }
     public String name() { return name; }

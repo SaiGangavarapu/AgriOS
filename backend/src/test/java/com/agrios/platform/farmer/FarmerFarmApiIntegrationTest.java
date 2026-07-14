@@ -13,6 +13,7 @@ import org.springframework.http.*;
 import org.testcontainers.containers.PostgreSQLContainer;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
+import org.testcontainers.utility.DockerImageName;
 
 @Testcontainers
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT,
@@ -24,7 +25,8 @@ class FarmerFarmApiIntegrationTest {
     @Container
     @ServiceConnection
     static PostgreSQLContainer<?> postgres =
-            new PostgreSQLContainer<>("postgis/postgis:16-3.4")
+            new PostgreSQLContainer<>(DockerImageName.parse("postgis/postgis:16-3.4")
+                    .asCompatibleSubstituteFor("postgres"))
                     .withDatabaseName("agrios")
                     .withUsername("agrios")
                     .withPassword("agrios");

@@ -9,6 +9,7 @@ import java.net.URI;
 import java.util.UUID;
 import org.slf4j.MDC;
 import org.springframework.data.domain.*;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 

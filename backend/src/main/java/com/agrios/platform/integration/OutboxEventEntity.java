@@ -3,6 +3,8 @@ package com.agrios.platform.integration;
 import jakarta.persistence.*;
 import java.time.Instant;
 import java.util.UUID;
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.SqlTypes;
 
 @Entity
 @Table(name = "outbox_event", schema = "integration")
@@ -15,6 +17,7 @@ class OutboxEventEntity {
     private long aggregateVersion;
     private String eventType;
     private int eventVersion;
+    @JdbcTypeCode(SqlTypes.JSON)
     @Column(columnDefinition = "jsonb")
     private String payload;
     private UUID correlationId;
