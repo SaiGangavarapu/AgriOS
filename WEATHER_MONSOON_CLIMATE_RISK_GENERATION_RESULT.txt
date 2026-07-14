@@ -1,0 +1,9 @@
+This cumulative release was generated from the Nutrient and Irrigation baseline
+confirmed on GitHub main.
+
+Local acceptance gate:
+
+1. mvn clean verify
+2. Flyway V001-V018
+3. Docker/PostGIS startup
+4. Weather ingestion and climate-risk smoke tests
