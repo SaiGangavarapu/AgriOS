@@ -2,7 +2,6 @@ package com.agrios.platform.knowledge.domain;
 
 import jakarta.persistence.*;
 import java.time.Instant;
-import java.util.Locale;
 import java.util.UUID;
 
 @Entity

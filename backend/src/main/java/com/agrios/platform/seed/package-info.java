@@ -1,5 +1,10 @@
 @org.springframework.modulith.ApplicationModule(
     displayName = "Seed",
-    allowedDependencies = {"shared", "common"}
+    allowedDependencies = {
+        "common::web",
+        "common::exception",
+        "cropcycle::domain",
+        "knowledge::domain"
+    }
 )
 package com.agrios.platform.seed;

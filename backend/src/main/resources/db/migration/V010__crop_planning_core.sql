@@ -1,5 +1,3 @@
-CREATE SCHEMA IF NOT EXISTS cropplanning;
-
 CREATE TABLE cropplanning.suitability_assessment (
   id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
   tenant_id uuid NOT NULL REFERENCES configuration.tenant(id),

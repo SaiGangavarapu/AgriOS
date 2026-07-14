@@ -1,0 +1,9 @@
+The implementation was generated from the cumulative baseline and aligned with
+the latest GitHub main-branch Maven configuration and module structure.
+
+Local acceptance remains mandatory:
+
+1. mvn clean verify
+2. Docker/PostGIS Testcontainers
+3. Flyway V001-V014
+4. API lifecycle smoke tests
