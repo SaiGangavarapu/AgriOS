@@ -1,0 +1,9 @@
+This cumulative milestone was generated against the crop-cycle, seed,
+operations, and task-calendar baseline confirmed on GitHub main.
+
+Local acceptance gate:
+
+1. mvn clean verify
+2. Flyway V001-V016
+3. Docker/PostGIS startup
+4. Nutrient and irrigation API smoke tests
