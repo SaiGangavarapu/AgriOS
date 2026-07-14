@@ -1,5 +1,10 @@
 @org.springframework.modulith.ApplicationModule(
-    displayName = "Notification",
-    allowedDependencies = {"shared", "common"}
+    displayName = "Farmer Notification",
+    allowedDependencies = {
+        "common::web",
+        "common::exception",
+        "farmer::domain",
+        "advisory::domain"
+    }
 )
 package com.agrios.platform.notification;

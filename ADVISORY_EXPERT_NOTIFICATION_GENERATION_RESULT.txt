@@ -1,0 +1,9 @@
+This cumulative milestone was generated from the IoT, Telemetry, and Smart
+Irrigation Automation baseline.
+
+Treat this milestone as generated but not applied until local acceptance passes:
+
+1. mvn clean verify
+2. Flyway V001-V024
+3. Docker/PostGIS startup
+4. advisory, expert-review, and notification API smoke tests
