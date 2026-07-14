@@ -1,0 +1,9 @@
+The implementation was generated and statically reviewed. Maven and Docker were
+not available for complete execution in the generation environment.
+
+Required local gate before acceptance:
+
+1. `mvn clean verify`
+2. `docker compose up -d --build`
+3. verify Flyway applies V001 through V007
+4. run the supplied farmer/farm API smoke commands
