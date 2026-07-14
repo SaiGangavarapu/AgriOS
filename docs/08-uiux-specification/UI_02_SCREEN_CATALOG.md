@@ -1,0 +1,22 @@
+# Screen Catalogue
+- Login
+- Farmer Dashboard
+- My Farms
+- Field Details
+- Soil Tests
+- Water Tests
+- Crop Planner
+- Crop Cycle
+- Tasks
+- Nutrient Plan
+- Irrigation
+- Weather
+- IoT Devices
+- Advisory
+- Crop Health
+- Harvest
+- Storage
+- Marketplace
+- Reports
+- Settings
+- Admin
