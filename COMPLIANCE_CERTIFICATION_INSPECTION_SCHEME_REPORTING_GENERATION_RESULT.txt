@@ -1,0 +1,11 @@
+This cumulative milestone was generated from the Market Intelligence, Price
+Discovery, Sales Planning, and Marketplace Integration baseline.
+
+Local acceptance gate:
+
+1. mvn clean verify
+2. Flyway V001-V039
+3. Docker/PostGIS startup
+4. standards, profile, certification, inspection, and scheme-eligibility smoke tests
+
+Treat this milestone as generated but not applied until local verification passes.
