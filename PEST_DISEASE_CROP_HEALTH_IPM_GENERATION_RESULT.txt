@@ -1,0 +1,9 @@
+This cumulative milestone was generated from the Advisory, Expert Review, and
+Farmer Notification baseline.
+
+Treat it as generated but not applied until local acceptance passes:
+
+1. mvn clean verify
+2. Flyway V001-V027
+3. Docker/PostGIS startup
+4. pest, disease, scouting, crop-health, outbreak, and IPM API smoke tests
