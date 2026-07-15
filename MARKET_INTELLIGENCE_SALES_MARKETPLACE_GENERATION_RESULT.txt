@@ -1,0 +1,11 @@
+This cumulative milestone was generated from the Farmer Finance, Cost Accounting,
+Profitability, and Income Aggregation baseline.
+
+Local acceptance gate:
+
+1. mvn clean verify
+2. Flyway V001-V036
+3. Docker/PostGIS startup
+4. price-ingestion, price-summary, sales-plan, buyer-offer, and listing smoke tests
+
+Treat this milestone as generated but not applied until local verification passes.
