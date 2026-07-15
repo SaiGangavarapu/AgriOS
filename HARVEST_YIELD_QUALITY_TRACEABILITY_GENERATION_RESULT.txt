@@ -1,0 +1,9 @@
+This cumulative milestone was generated from the Pest, Disease, Crop Health,
+and IPM baseline.
+
+Local acceptance gate:
+
+1. mvn clean verify
+2. Flyway V001-V030
+3. Docker/PostGIS startup
+4. harvest, quality, yield, lot, packaging, and QR trace smoke tests

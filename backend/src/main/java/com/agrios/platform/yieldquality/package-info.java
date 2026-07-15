@@ -1,10 +1,11 @@
 @org.springframework.modulith.ApplicationModule(
-    displayName = "Harvest",
+    displayName = "Yield and Quality",
     allowedDependencies = {
         "common::web",
         "common::exception",
+        "harvest::domain",
         "cropcycle::domain",
-        "farm::domain"
+        "knowledge::domain"
     }
 )
-package com.agrios.platform.harvest;
+package com.agrios.platform.yieldquality;
