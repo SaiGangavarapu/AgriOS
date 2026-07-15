@@ -1,0 +1,11 @@
+This cumulative milestone was generated from the Compliance, Certification,
+Inspection, Scheme Eligibility, and Regulatory Reporting baseline.
+
+Local acceptance gate:
+
+1. mvn clean verify
+2. Flyway V001-V042
+3. Docker/PostGIS startup
+4. organization, membership, resource-booking, procurement, and collective-lot smoke tests
+
+Treat this milestone as generated but not applied until local verification passes.
