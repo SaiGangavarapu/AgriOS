@@ -1,0 +1,13 @@
+This cumulative milestone was generated from the Farmer Organization, FPO,
+Cooperative, Shared Resources, and Collective Marketing baseline.
+
+Local acceptance gate:
+
+1. mvn clean verify
+2. Flyway V001-V045
+3. Docker/PostGIS startup
+4. provider, model, knowledge, assistant-session, and tool-execution smoke tests
+
+The current milestone provides the provider-neutral core. Actual LLM invocation,
+embedding generation, vector similarity search, reranking, and tool adapters
+must be wired and verified in later infrastructure milestones.
