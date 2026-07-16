@@ -1,0 +1,10 @@
+AgriOS Spring AI Foundation v1.0
+Baseline: uploaded AgriOS(3).zip (user referred to authoritative AgriOS(2).zip; mounted upload name was AgriOS(3).zip)
+Generated: YES
+Statically inspected: YES
+Compiled: NO — Maven executed, but Maven Central dependency resolution failed because sandbox DNS/network access was unavailable.
+Tested: NO — compile dependency resolution did not complete.
+Docker verified: NO
+Locally applied: NO
+Latest migration: V045
+New migration: NONE

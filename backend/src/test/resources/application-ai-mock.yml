@@ -1,0 +1,10 @@
+spring:
+  ai:
+    model:
+      chat: none
+agrios:
+  ai:
+    mock:
+      enabled: true
+    ollama:
+      enabled: false

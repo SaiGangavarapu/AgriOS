@@ -1,0 +1,9 @@
+Milestone: AgriOS Farm, Inventory, Task, and Calendar Integration v1.0
+Baseline: AGRIOS_SPRING_AI_FOUNDATION_V1.0.zip
+Generated: YES
+Statically inspected: YES
+Compiled: NO
+Tested: NO
+Docker verified: NO
+Locally applied: NO
+Latest Flyway migration: V046

@@ -2,7 +2,8 @@ package com.agrios.platform.ai.domain;
 
 import jakarta.persistence.*;
 import java.time.Instant;
-import java.util.UUID;
+import java.util.*;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.type.SqlTypes;
 
@@ -39,7 +40,19 @@ public class AssistantMessageEntity {
         return value;
     }
 
+    public static AssistantMessageEntity createAssistant(UUID sessionId, String text, String modelCode, Integer promptTokens, Integer completionTokens, Long latencyMs, String finishReason, Map<String,Object> metadata) {
+        AssistantMessageEntity value=create(sessionId,"ASSISTANT",text,modelCode,toJson(metadata));
+        value.promptTokens=promptTokens; value.completionTokens=completionTokens; value.latencyMs=latencyMs; value.finishReason=finishReason;
+        return value;
+    }
+    private static String toJson(Map<String,Object> metadata){ try{return new ObjectMapper().writeValueAsString(metadata);}catch(Exception e){return "{}";} }
     public UUID id() { return id; }
     public String messageRole() { return messageRole; }
     public String messageText() { return messageText; }
+    public Instant createdAt() { return createdAt; }
+    public String modelCode() { return modelCode; }
+    public Integer promptTokens() { return promptTokens; }
+    public Integer completionTokens() { return completionTokens; }
+    public Long latencyMs() { return latencyMs; }
+    public String finishReason() { return finishReason; }
 }

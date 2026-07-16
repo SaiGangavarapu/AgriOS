@@ -53,4 +53,7 @@ public class AiModelProfileEntity {
     public UUID id() { return id; }
     public String modelCode() { return modelCode; }
     public String modelRole() { return modelRole; }
+    public UUID providerId() { return providerId; }
+    public boolean defaultForRole() { return defaultForRole; }
+    public Integer maxOutputTokens() { return maxOutputTokens; }
 }

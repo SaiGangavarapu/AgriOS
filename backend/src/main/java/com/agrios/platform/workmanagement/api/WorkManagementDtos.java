@@ -1,0 +1,3 @@
+package com.agrios.platform.workmanagement.api;
+import java.math.BigDecimal; import java.time.*; import java.util.*;
+public final class WorkManagementDtos {private WorkManagementDtos(){} public record CalendarEntry(String entryType,UUID referenceId,String title,String status,String priority,Instant startsAt,Instant endsAt,UUID cropCycleId,UUID ownerEntityId,String sourceModule){} public record Dashboard(long openTasks,long overdueTasks,long dueToday,long operationsPlanned,long operationsInProgress,long lowStockItems,long expiringLots,BigDecimal inventoryQuantity,List<CalendarEntry> nextActivities){} }

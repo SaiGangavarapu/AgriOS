@@ -1,6 +1,7 @@
 package com.agrios.platform.ai.api;
 
 import com.agrios.platform.ai.application.AiPlatformService;
+import com.agrios.platform.ai.foundation.application.AssistantOrchestrationService;
 import com.agrios.platform.common.web.TenantContextResolver;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
@@ -12,12 +13,12 @@ import org.springframework.web.bind.annotation.*;
 public class AiPlatformController {
     private final AiPlatformService service;
     private final TenantContextResolver tenants;
+    private final AssistantOrchestrationService orchestration;
 
     public AiPlatformController(
-            AiPlatformService service,
-            TenantContextResolver tenants) {
-        this.service = service;
-        this.tenants = tenants;
+            AiPlatformService service, TenantContextResolver tenants,
+            AssistantOrchestrationService orchestration) {
+        this.service = service; this.tenants = tenants; this.orchestration = orchestration;
     }
 
     @PostMapping("/ai/providers")
@@ -76,6 +77,16 @@ public class AiPlatformController {
             HttpServletRequest request) {
         return service.addUserMessage(
                 tenants.resolve(request).tenantId(), sessionId, body);
+    }
+
+    @PostMapping("/ai/assistant/sessions/{sessionId}/submit")
+    AiDtos.AssistantExchangeResponse submit(
+            @PathVariable UUID sessionId,
+            @Valid @RequestBody AiDtos.AssistantSubmitRequest body,
+            HttpServletRequest request) {
+        String correlationId = Optional.ofNullable(request.getHeader("X-Correlation-ID"))
+                .filter(v -> !v.isBlank()).orElse(UUID.randomUUID().toString());
+        return orchestration.submit(tenants.resolve(request).tenantId(), sessionId, body, correlationId);
     }
 
     @GetMapping("/ai/assistant/sessions/{sessionId}/messages")

@@ -99,4 +99,14 @@ public final class AiDtos {
                     value.id(), value.messageRole(), value.messageText());
         }
     }
+
+    public record AssistantSubmitRequest(
+            @NotBlank @Size(max = 12000) String messageText,
+            String modelCode) {}
+
+    public record AssistantExchangeResponse(
+            UUID userMessageId, UUID assistantMessageId, String assistantText,
+            String providerCode, String modelCode, Long latencyMs,
+            Integer promptTokens, Integer completionTokens, String finishReason,
+            String correlationId, String languageCode) {}
 }

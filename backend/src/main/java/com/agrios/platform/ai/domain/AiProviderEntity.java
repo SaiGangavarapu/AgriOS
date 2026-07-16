@@ -39,4 +39,6 @@ public class AiProviderEntity {
 
     public UUID id() { return id; }
     public String status() { return status; }
+    public String providerCode() { return providerCode; }
+    public String providerType() { return providerType; }
 }
