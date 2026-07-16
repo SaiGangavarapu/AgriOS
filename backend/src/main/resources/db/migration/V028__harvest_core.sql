@@ -1,3 +1,5 @@
+CREATE SCHEMA IF NOT EXISTS harvest;
+
 CREATE TABLE harvest.harvest_plan (
   id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
   tenant_id uuid NOT NULL REFERENCES configuration.tenant(id),

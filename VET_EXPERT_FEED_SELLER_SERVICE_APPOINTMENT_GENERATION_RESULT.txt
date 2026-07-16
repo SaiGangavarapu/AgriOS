@@ -1,0 +1,10 @@
+Milestone: AgriOS Vet, Expert, Feed Seller, and Service Appointment Management v1.0
+Baseline: AGRIOS_FARM_INVENTORY_TASK_CALENDAR_INTEGRATION_V1.0.zip
+Generated: YES
+Statically inspected: YES
+Compiled: NO - Maven is not installed in the generation environment
+Tested: NO
+Docker verified: NO
+Locally applied: NO
+Latest Flyway migration: V047
+AI roadmap advanced: NO

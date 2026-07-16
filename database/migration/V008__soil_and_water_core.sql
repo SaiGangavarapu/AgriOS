@@ -1,3 +1,5 @@
+CREATE SCHEMA IF NOT EXISTS soilwater;
+
 ALTER TABLE IF EXISTS public.event_publication
   ALTER COLUMN serialized_event TYPE text;
 

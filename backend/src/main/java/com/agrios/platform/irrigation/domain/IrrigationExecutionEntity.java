@@ -15,6 +15,7 @@ public class IrrigationExecutionEntity {
     @Column(nullable = false) private Instant startedAt;
     private Instant completedAt;
     private BigDecimal actualDepthMm;
+    @Column(name = "actual_volume_m3")
     private BigDecimal actualVolumeM3;
     private Integer pumpRuntimeMinutes;
     private BigDecimal energyConsumedKwh;

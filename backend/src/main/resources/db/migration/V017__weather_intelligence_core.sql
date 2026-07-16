@@ -1,3 +1,5 @@
+CREATE SCHEMA IF NOT EXISTS weather;
+
 CREATE TABLE weather.weather_source (
   id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
   tenant_id uuid NOT NULL REFERENCES configuration.tenant(id),

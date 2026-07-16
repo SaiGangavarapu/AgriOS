@@ -4,7 +4,7 @@ CREATE TABLE organization.collective_collection_lot (
   organization_id uuid NOT NULL REFERENCES organization.farmer_organization(id),
   collection_code varchar(120) NOT NULL,
   crop_id uuid NOT NULL REFERENCES knowledge.crop(id),
-  variety_id uuid NULL REFERENCES knowledge.crop_variety(id),
+  variety_id uuid NULL REFERENCES knowledge.variety(id),
   grade_code varchar(40) NULL,
   total_quantity numeric(18,4) NOT NULL DEFAULT 0,
   quantity_unit varchar(40) NOT NULL,

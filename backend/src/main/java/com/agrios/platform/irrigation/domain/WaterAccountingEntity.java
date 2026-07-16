@@ -13,7 +13,7 @@ public class WaterAccountingEntity {
     private UUID waterSourceId;
     @Column(nullable = false) private BigDecimal rainfallEffectiveMm;
     @Column(nullable = false) private BigDecimal irrigationAppliedMm;
-    @Column(nullable = false) private BigDecimal irrigationVolumeM3;
+    @Column(name = "irrigation_volume_m3", nullable = false) private BigDecimal irrigationVolumeM3;
     private BigDecimal estimatedCropDemandMm;
     private BigDecimal estimatedDeficitMm;
     @Column(nullable = false) private Instant calculatedAt;

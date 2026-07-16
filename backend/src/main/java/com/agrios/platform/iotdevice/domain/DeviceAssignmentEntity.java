@@ -45,7 +45,6 @@ public class DeviceAssignmentEntity {
     }
 
     public UUID id() { return id; }
-    public UUID id() { return id; }
     public String assignmentType() { return assignmentType; }
     public UUID assignedEntityId() { return assignedEntityId; }
     public boolean current() { return isCurrent; }

@@ -1,0 +1,1 @@
+package com.agrios.platform.serviceappointment.domain; import java.util.UUID; import org.springframework.data.jpa.repository.JpaRepository; public interface AppointmentVisitNoteRepository extends JpaRepository<AppointmentVisitNoteEntity,UUID>{boolean existsByAppointmentId(UUID appointmentId);}

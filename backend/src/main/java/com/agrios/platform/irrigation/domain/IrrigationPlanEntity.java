@@ -18,6 +18,7 @@ public class IrrigationPlanEntity {
     @Column(nullable = false) private String irrigationMethod;
     @Column(nullable = false) private String status;
     private BigDecimal seasonalWaterRequirementMm;
+    @Column(name = "planned_water_volume_m3")
     private BigDecimal plannedWaterVolumeM3;
     private BigDecimal efficiencyPercent;
     @JdbcTypeCode(SqlTypes.JSON)

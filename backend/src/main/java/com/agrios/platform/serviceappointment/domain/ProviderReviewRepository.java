@@ -1,0 +1,1 @@
+package com.agrios.platform.serviceappointment.domain; import java.util.*; import org.springframework.data.jpa.repository.JpaRepository; public interface ProviderReviewRepository extends JpaRepository<ProviderReviewEntity,UUID>{boolean existsByAppointmentId(UUID appointmentId); List<ProviderReviewEntity> findByProviderIdAndStatus(UUID providerId,String status);}

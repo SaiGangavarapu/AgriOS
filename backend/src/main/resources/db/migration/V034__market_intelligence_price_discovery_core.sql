@@ -1,3 +1,5 @@
+CREATE SCHEMA IF NOT EXISTS market;
+
 CREATE TABLE market.market_source (
   id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
   tenant_id uuid NOT NULL REFERENCES configuration.tenant(id),
@@ -38,7 +40,7 @@ CREATE TABLE market.commodity_price_observation (
   source_id uuid NOT NULL REFERENCES market.market_source(id),
   market_location_id uuid NULL REFERENCES market.market_location(id),
   crop_id uuid NOT NULL REFERENCES knowledge.crop(id),
-  variety_id uuid NULL REFERENCES knowledge.crop_variety(id),
+  variety_id uuid NULL REFERENCES knowledge.variety(id),
   grade_code varchar(40) NULL,
   observed_date date NOT NULL,
   min_price numeric(18,4) NULL,
@@ -60,7 +62,7 @@ CREATE TABLE market.price_forecast (
   id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
   tenant_id uuid NOT NULL REFERENCES configuration.tenant(id),
   crop_id uuid NOT NULL REFERENCES knowledge.crop(id),
-  variety_id uuid NULL REFERENCES knowledge.crop_variety(id),
+  variety_id uuid NULL REFERENCES knowledge.variety(id),
   market_location_id uuid NULL REFERENCES market.market_location(id),
   forecast_date date NOT NULL,
   horizon_date date NOT NULL,

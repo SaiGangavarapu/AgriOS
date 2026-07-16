@@ -13,6 +13,7 @@ public class IrrigationScheduleEntity {
     @Column(nullable = false) private UUID cropCycleId;
     @Column(nullable = false) private Instant scheduledAt;
     @Column(nullable = false) private BigDecimal targetDepthMm;
+    @Column(name = "planned_volume_m3")
     private BigDecimal plannedVolumeM3;
     private String cropStageCode;
     @Column(nullable = false) private String triggerType;

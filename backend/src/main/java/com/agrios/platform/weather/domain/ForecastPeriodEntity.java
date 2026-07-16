@@ -13,7 +13,9 @@ public class ForecastPeriodEntity {
     private UUID forecastRunId;
     @Column(nullable = false) private Instant periodStart;
     @Column(nullable = false) private Instant periodEnd;
+    @Column(name = "temperature_min_c")
     private BigDecimal temperatureMinC;
+    @Column(name = "temperature_max_c")
     private BigDecimal temperatureMaxC;
     private BigDecimal rainfallMm;
     private BigDecimal precipitationProbability;

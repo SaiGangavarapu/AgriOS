@@ -15,6 +15,7 @@ public class ObservationEntity {
     @Column(nullable = false) private UUID sourceId;
     @Column(nullable = false) private UUID locationId;
     @Column(nullable = false) private Instant observedAt;
+    @Column(name = "temperature_c")
     private BigDecimal temperatureC;
     private BigDecimal relativeHumidityPercent;
     private BigDecimal rainfallMm;
@@ -22,6 +23,7 @@ public class ObservationEntity {
     private BigDecimal windDirectionDegrees;
     private BigDecimal solarRadiationWm2;
     private BigDecimal pressureHpa;
+    @Column(name = "soil_temperature_c")
     private BigDecimal soilTemperatureC;
     @Column(nullable = false) private String sourceQuality;
     @JdbcTypeCode(SqlTypes.JSON)

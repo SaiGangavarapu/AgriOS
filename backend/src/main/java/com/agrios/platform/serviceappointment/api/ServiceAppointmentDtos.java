@@ -1,0 +1,14 @@
+package com.agrios.platform.serviceappointment.api;
+import com.agrios.platform.serviceappointment.domain.*; import jakarta.validation.constraints.*; import java.time.Instant; import java.util.*;
+public final class ServiceAppointmentDtos {private ServiceAppointmentDtos(){}
+ public record ProviderRequest(UUID expertProfileId,UUID userAccountId,@NotBlank String providerType,@NotBlank String displayName,String organizationName,String phoneNumber,@Email String emailAddress,String registrationReference,Set<String> serviceAreaCodes,Set<String> languageCodes,Set<String> serviceCodes,@NotBlank String consultationMode){}
+ public record ProviderResponse(UUID id,String providerType,String displayName,String organizationName,String consultationMode,String status,double averageRating,int reviewCount){public static ProviderResponse from(ServiceProviderEntity v){return new ProviderResponse(v.id(),v.providerType(),v.displayName(),v.organizationName(),v.consultationMode(),v.status(),v.averageRating(),v.reviewCount());}}
+ public record AvailabilityRequest(@NotNull Instant startAt,@NotNull Instant endAt,@NotBlank String mode,String locationText,@Min(1) int capacity){}
+ public record AvailabilityResponse(UUID id,Instant startAt,Instant endAt,String mode,String locationText,int capacity,int bookedCount,String status){public static AvailabilityResponse from(ProviderAvailabilityEntity v){return new AvailabilityResponse(v.id(),v.startAt(),v.endAt(),v.mode(),v.locationText(),v.capacity(),v.bookedCount(),v.status());}}
+ public record AppointmentRequest(@NotNull UUID providerId,UUID availabilityId,@NotNull UUID farmerId,UUID farmId,UUID fieldId,UUID cropCycleId,@NotBlank String subjectType,UUID subjectReferenceId,@NotBlank String appointmentType,@NotBlank String mode,@NotNull Instant scheduledStartAt,@NotNull Instant scheduledEndAt,String locationText,@NotBlank @Size(max=4000) String problemSummary){}
+ public record StatusRequest(@NotBlank String status,String reason,String providerNotes){}
+ public record VisitNoteRequest(@NotNull UUID providerId,String diagnosisSummary,@NotBlank String recommendationText,List<Map<String,Object>> prescriptionDetails,boolean followUpRequired,Instant followUpDueAt,List<String> attachmentReferences){}
+ public record ReviewRequest(@NotNull UUID farmerId,@Min(1) @Max(5) int rating,@Size(max=2000) String reviewText){}
+ public record AppointmentResponse(UUID id,UUID providerId,UUID farmerId,String appointmentType,String mode,Instant scheduledStartAt,Instant scheduledEndAt,String status,String problemSummary,long version){public static AppointmentResponse from(AppointmentEntity v){return new AppointmentResponse(v.id(),v.providerId(),v.farmerId(),v.appointmentType(),v.mode(),v.scheduledStartAt(),v.scheduledEndAt(),v.status(),v.problemSummary(),v.version());}}
+ public record ProviderDashboard(long requested,long confirmed,long inProgress,long completed,List<AppointmentResponse> upcoming){}
+}

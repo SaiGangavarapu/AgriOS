@@ -15,6 +15,7 @@ public class DeviceHealthEntity {
     @Column(nullable = false) private Instant recordedAt;
     private BigDecimal batteryPercent;
     private BigDecimal signalStrengthDbm;
+    @Column(name = "internal_temperature_c")
     private BigDecimal internalTemperatureC;
     private Long uptimeSeconds;
     private Long storageFreeBytes;

@@ -63,7 +63,7 @@ CREATE TABLE market.price_alert (
   tenant_id uuid NOT NULL REFERENCES configuration.tenant(id),
   farmer_id uuid NOT NULL REFERENCES farmer.farmer(id),
   crop_id uuid NOT NULL REFERENCES knowledge.crop(id),
-  variety_id uuid NULL REFERENCES knowledge.crop_variety(id),
+  variety_id uuid NULL REFERENCES knowledge.variety(id),
   market_location_id uuid NULL REFERENCES market.market_location(id),
   alert_type varchar(40) NOT NULL
     CHECK (alert_type IN ('PRICE_ABOVE','PRICE_BELOW','PRICE_CHANGE_PERCENT','BEST_MARKET')),
